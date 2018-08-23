@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { TweetListComponent } from './tweet-list/tweet-list.component';
 import { TweetRowComponent } from './tweet-row/tweet-row.component';
 import { TweetService } from './tweet.service';
+import {HttpClientModule} from '@angular/common/http';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { TweetService } from './tweet.service';
     TweetRowComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
   providers: [TweetService],
   bootstrap: [AppComponent]
