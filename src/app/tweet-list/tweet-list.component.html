@@ -1,0 +1,14 @@
+<!--<p>-->
+<!--tweet-list works!-->
+<!--</p>-->
+
+<!--*ngFor="let tweet of tweets" >{{tweet.timestamp | date}} : {{tweet.content}} ({{tweet.author}})-->
+
+<!--<ul>-->
+  <!--<li *ngFor="let tweet of tweets" (mouseover)="onOverTweet(tweet)" >{{tweet.timestamp | date}} : {{tweet.content}} ({{tweet.author}})</li>-->
+<!--</ul>-->
+<h1>class.selected</h1>
+<app-tweet-row *ngFor="let tweet of tweets" [tweet]="tweet" (mouseover)="onOverTweet(tweet)" [class.selected]="isSelectedTweet(tweet)"></app-tweet-row>
+
+<h1>ngClass</h1>
+<app-tweet-row *ngFor="let tweet of tweets" [tweet]="tweet" (mouseover)="onOverTweet(tweet)" [ngClass]="{selected: isSelectedTweet(tweet)}"></app-tweet-row>
