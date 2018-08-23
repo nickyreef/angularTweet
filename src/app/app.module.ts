@@ -5,6 +5,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { TweetListComponent } from './tweet-list/tweet-list.component';
 import { TweetRowComponent } from './tweet-row/tweet-row.component';
+import { TweetService } from './tweet.service';
 
 
 @NgModule({
@@ -16,7 +17,7 @@ import { TweetRowComponent } from './tweet-row/tweet-row.component';
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [TweetService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
