@@ -20,18 +20,27 @@ export class TweetService {
   }
 
   /**
-   * Création d'un tweet et ajout a la liste des tweets
+   * Création d'un tweet et ajout a la liste des tweets - sans API HTTP
    * @param tweet
    */
-  create(tweet: Tweet): Tweet {
-    tweet.id = this.tweets.length + 1;
-    const tweetCreated = Object.assign({}, tweet);
-    this.tweets.push(tweetCreated);
-    return tweetCreated;
+  // create(tweet: Tweet): Tweet {
+  //   tweet.id = this.tweets.length + 1;
+  //   const tweetCreated = Object.assign({}, tweet);
+  //   this.tweets.push(tweetCreated);
+  //   return tweetCreated;
+  // }
+
+  /**
+   * Création API HTTP
+   * @param tweet
+   */
+  create(tweet: Tweet): Observable<Tweet> {
+    const copy = Object.assign({}, tweet);
+    return this.httpClient.post<Tweet>('http://localhost:8080/api/tweets/', copy);
   }
 
   /**
-   * Mise a jour d'un tweet present dans la liste - sans API
+   * Mise a jour d'un tweet present dans la liste - sans API HTTP
    * @param tweet
    */
   // update(tweet: Tweet): Tweet {
@@ -47,11 +56,12 @@ export class TweetService {
   // }
 
   /**
-   * Mise a jour via API
+   * Mise a jour via API HTTP
    * @param tweet
    */
   update(tweet: Tweet): Observable<Tweet> {
-    return this.httpClient.put<Tweet>('http://localhost:8080/api/tweets/', tweet);
+    const copy = Object.assign({}, tweet);
+    return this.httpClient.put<Tweet>('http://localhost:8080/api/tweets/', copy);
   }
 
   /**
