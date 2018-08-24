@@ -8,7 +8,7 @@ import {TweetService} from './tweet.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'app';
+  title = 'Twitting is not a Crime';
 
   ngOnInit() {
     // this.tweets = [

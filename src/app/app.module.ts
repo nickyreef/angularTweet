@@ -3,21 +3,19 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
-import { TweetListComponent } from './tweet-list/tweet-list.component';
-import { TweetRowComponent } from './tweet-row/tweet-row.component';
 import { TweetService } from './tweet.service';
 import {HttpClientModule} from '@angular/common/http';
+import {TweetModule} from './tweet/tweet.module';
 
 
 @NgModule({
   declarations: [
-    AppComponent,
-    TweetListComponent,
-    TweetRowComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    TweetModule
   ],
   providers: [TweetService],
   bootstrap: [AppComponent]
