@@ -1,0 +1,3 @@
+<a [routerLink]="['/tweets']">Return to Tweets</a>
+<p *ngIf="tweetDetail">{{tweetDetail.author}} : {{tweetDetail.content}} ### {{tweetDetail.tag}}</p>
+<button (click)="onReturnToTweets($event)"> Return to All Tweets...</button>

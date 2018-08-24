@@ -2,10 +2,13 @@ import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {TweetListComponent} from './tweet-list/tweet-list.component';
 import {TweetRowComponent} from './tweet-row/tweet-row.component';
+import { TweetDetailComponent } from './tweet-detail/tweet-detail.component';
+import {RouterModule} from '@angular/router';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule
   ],
   exports: [
     TweetListComponent,
@@ -13,7 +16,8 @@ import {TweetRowComponent} from './tweet-row/tweet-row.component';
   ],
   declarations: [
     TweetListComponent,
-    TweetRowComponent
+    TweetRowComponent,
+    TweetDetailComponent
   ]
 })
 export class TweetModule {

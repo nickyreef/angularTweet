@@ -1,5 +1,6 @@
 <!--<p>-->
-  <!--tweet-row works!-->
+<!--tweet-row works!-->
 <!--</p>-->
 
-<p>{{tweet.content}}  -  {{tweet.tag}}</p>
+<!--<p>{{tweet.content}}  -  {{tweet.tag}}</p>-->
+<a [routerLink]="['/tweets', tweet.id]">{{tweet.content}} - {{tweet.tag}}</a><br>
