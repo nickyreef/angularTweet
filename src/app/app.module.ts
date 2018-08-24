@@ -9,6 +9,7 @@ import {TweetModule} from './tweet/tweet.module';
 import {RouterModule} from '@angular/router';
 import {TweetDetailComponent} from './tweet/tweet-detail/tweet-detail.component';
 import {TweetListComponent} from './tweet/tweet-list/tweet-list.component';
+import {TweetFormComponent} from './tweet/tweet-form/tweet-form.component';
 
 
 @NgModule({
@@ -23,7 +24,9 @@ import {TweetListComponent} from './tweet/tweet-list/tweet-list.component';
     RouterModule.forRoot([
       {path: '', redirectTo: 'tweets', pathMatch: 'full' },
       { path: 'tweets', component: TweetListComponent },
-      { path: 'tweets/:id', component: TweetDetailComponent }
+      { path: 'tweets/edit', component: TweetFormComponent },
+      { path: 'tweets/:id', component: TweetDetailComponent },
+      { path: 'tweets/edit/:id', component: TweetFormComponent },
     ])
   ],
   providers: [TweetService],

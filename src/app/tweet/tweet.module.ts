@@ -5,11 +5,13 @@ import {TweetRowComponent} from './tweet-row/tweet-row.component';
 import { TweetDetailComponent } from './tweet-detail/tweet-detail.component';
 import {RouterModule} from '@angular/router';
 import { TweetFormComponent } from './tweet-form/tweet-form.component';
+import {ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    ReactiveFormsModule
   ],
   exports: [
     TweetListComponent,

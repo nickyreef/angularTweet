@@ -1,6 +1,7 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Tweet} from '../tweet.model';
 import {TweetService} from '../tweet.service';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-tweet-list',
@@ -13,7 +14,7 @@ export class TweetListComponent implements OnInit {
   @Output() tweetSelected;
   selectedTweetByMouse: Tweet;
 
-  constructor(private tweetService: TweetService) {
+  constructor(private tweetService: TweetService, private route: ActivatedRoute, private router: Router) {
     this.tweetSelected = new EventEmitter<Tweet>();
   }
 
@@ -32,7 +33,10 @@ export class TweetListComponent implements OnInit {
     } else {
       return false;
     }
+  }
 
+  onAddNewTweet(ev) {
+    this.router.navigate(['/tweets/edit']);
   }
 
 }

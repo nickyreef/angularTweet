@@ -1,7 +1,7 @@
 <h1 style="margin-left: 25%">* Tweet details *</h1>
 <div class="row">
   <div class="col-md-6 offset-md-3 ">
-    <p *ngIf="tweetDetail">{{tweetDetail.author}} : {{tweetDetail.content}} ### {{tweetDetail.tag}} <a [routerLink]="['/tweets']">Edit Tweet</a></p>
+    <p *ngIf="tweetDetail">{{tweetDetail.author}} : {{tweetDetail.content}} ### {{tweetDetail.tag}} <a [routerLink]="['/tweets/edit',tweetDetail.id]">Edit Tweet</a></p>
     <button (click)="onReturnToTweets($event)"> Return to All Tweets...</button>
   </div>
 </div>

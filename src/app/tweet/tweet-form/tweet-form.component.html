@@ -1,3 +1,10 @@
-<p>
-  tweet-form works!
-</p>
+<!--<p>-->
+  <!--tweet-form works!-->
+<!--</p>-->
+<h1 style="margin-left: 25%">Editing tweet...</h1>
+<form [formGroup]="tweetForm" (ngSubmit)="saveTweet()">
+  <label for="name">Author :</label><input id="name" type="text" formControlName="author"><br>
+  <label for="tag">Tag(s) :</label><input id="tag" type="text" formControlName="tag"><br>
+  <label for="content">content :</label><input id="content" type="text" formControlName="content"><br>
+  <button type="submit" [disabled]="tweetForm.invalid">Soumettre</button>
+</form>
