@@ -12,12 +12,15 @@
 <!--<app-tweet-row *ngFor="let tweet of tweets | async" [tweet]="tweet" (mouseover)="onOverTweet(tweet)" [class.selected]="isSelectedTweet(tweet)"></app-tweet-row>-->
 
 <h1 style="margin-left: 25%">List of Tweets...</h1>
-<div class="row">
-  <div class="col-md-4 offset-md-4 ">
-    <app-tweet-row *ngFor="let tweet of tweets | async" [tweet]="tweet" (mouseover)="onOverTweet(tweet)" [ngClass]="{selected: isSelectedTweet(tweet)}"></app-tweet-row>
-
-    <!--<a [routerLink]="['/tweets/edit']">+ Add a new Tweet...</a>-->
-    <button (click)="onAddNewTweet($event)">+ Add new tweet...</button>
-  </div>
-</div>
+<!--<div class="container">-->
+  <!--<div class="row">-->
+    <!--<div class="col-md-4 offset-md-4 ">-->
+      <div class="list-group">
+        <app-tweet-row class="list-group-item" *ngFor="let tweet of tweets | async" [tweet]="tweet" (mouseover)="onOverTweet(tweet)" [ngClass]="{selected: isSelectedTweet(tweet)}"></app-tweet-row>
+        <!--<a [routerLink]="['/tweets/edit']">+ Add a new Tweet...</a>-->
+        <button (click)="onAddNewTweet($event)">+ Add new tweet...</button>
+      </div>
+    <!--</div>-->
+  <!--</div>-->
+<!--</div>-->
 

@@ -3,6 +3,7 @@ import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {TweetService} from '../tweet.service';
 import {Tweet} from '../tweet.model';
 import {ActivatedRoute, ParamMap, Router} from '@angular/router';
+import {MessageService} from '../../message.service';
 
 @Component({
   selector: 'app-tweet-form',
@@ -15,7 +16,7 @@ export class TweetFormComponent implements OnInit {
   tweet: Tweet;
 
   constructor(private fb: FormBuilder, private tweetService: TweetService,
-              private route: ActivatedRoute, private router: Router) {
+              private route: ActivatedRoute, private router: Router, private messageService: MessageService) {
   }
 
   ngOnInit() {
@@ -58,6 +59,7 @@ export class TweetFormComponent implements OnInit {
       // mise à jour d'un tweet
       this.tweetService.update(this.tweet).subscribe(twt => {
         this.tweet = twt;
+        this.messageService.sendMessage(twt.author + ' has updated a tweet !');
         this.router.navigate(['/tweets']);
       });
     } else {

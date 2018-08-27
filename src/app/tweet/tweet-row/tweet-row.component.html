@@ -3,4 +3,6 @@
 <!--</p>-->
 
 <!--<p>{{tweet.content}}  -  {{tweet.tag}}</p>-->
-<a [routerLink]="['/tweets', tweet.id]">{{tweet.content}} - {{tweet.tag}}</a><br>
+<a [routerLink]="['/tweets', tweet.id]">
+  <div>{{tweet.content}} - {{tweet.tag}}</div>
+</a><br>

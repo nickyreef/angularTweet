@@ -10,11 +10,14 @@ import {RouterModule} from '@angular/router';
 import {TweetDetailComponent} from './tweet/tweet-detail/tweet-detail.component';
 import {TweetListComponent} from './tweet/tweet-list/tweet-list.component';
 import {TweetFormComponent} from './tweet/tweet-form/tweet-form.component';
+import { MessageComponent } from './message/message.component';
+import {MessageService} from './message.service';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MessageComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +32,10 @@ import {TweetFormComponent} from './tweet/tweet-form/tweet-form.component';
       { path: 'tweets/edit/:id', component: TweetFormComponent },
     ])
   ],
-  providers: [TweetService],
+  providers: [
+    TweetService,
+    MessageService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
