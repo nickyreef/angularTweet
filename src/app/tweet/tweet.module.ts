@@ -6,6 +6,7 @@ import { TweetDetailComponent } from './tweet-detail/tweet-detail.component';
 import {RouterModule} from '@angular/router';
 import { TweetFormComponent } from './tweet-form/tweet-form.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {LoginComponent} from '../login/login.component';
 
 @NgModule({
   imports: [
