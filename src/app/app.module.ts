@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { TweetService } from './tweet/tweet.service';
-import {HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {TweetModule} from './tweet/tweet.module';
 import {CanActivate, RouterModule} from '@angular/router';
 import {TweetDetailComponent} from './tweet/tweet-detail/tweet-detail.component';
@@ -16,6 +16,7 @@ import {LoginComponent} from './login/login.component';
 import {LoginService} from './login/login.service';
 import {FormsModule} from '@angular/forms';
 import {UserRouteAccessService} from './user-route-access.service';
+import {TokenInterceptor} from './token-interceptor';
 
 
 @NgModule({
@@ -43,7 +44,8 @@ import {UserRouteAccessService} from './user-route-access.service';
     TweetService,
     MessageService,
     LoginService,
-    UserRouteAccessService
+    UserRouteAccessService,
+    {provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true}
   ],
   bootstrap: [AppComponent]
 })
